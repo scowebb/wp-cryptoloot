@@ -8,14 +8,6 @@ The WP CryptoLOOT plugin adds CryptoLOOT mining and captcha options to WordPress
 * **Step Two**: Install and activate the plugin, then enter your CryptoLOOT public key into the key field.
 * **Step Three**: Choose your options and start mining with CryptoLOOT.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
@@ -23,7 +15,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Scott Webber** - *Initial work* - [PurpleBooth](https://github.com/scowebb)
+* **Scott Webber** - *Initial work* - [@scowebb](https://github.com/scowebb)
 
 ## License
 
