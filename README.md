@@ -11,7 +11,6 @@ The WP CryptoLOOT plugin adds CryptoLOOT mining and captcha options to WordPress
 ## Built With
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
-* [WordPress](https://wordpress.org/) - WordPress
 
 ## Authors
 
