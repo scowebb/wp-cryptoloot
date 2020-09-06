@@ -15,7 +15,7 @@ The WP CryptoLOOT plugin adds CryptoLOOT mining and captcha options to [WordPres
 
 ## Authors
 
-* **Scott Webber** - *Initial work* - [@scowebb](https://github.com/scowebb).
+* **Scott Webber** - *Initial work* - [@scowebb](https://github.com/scowebb)
 
 ## License
 
