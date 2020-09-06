@@ -4,7 +4,7 @@ The WP CryptoLOOT plugin adds CryptoLOOT mining and captcha options to [WordPres
 
 ## Getting Started
 
-* **Step One**: Sign up for an account with (CryptoLOOT)[https://crypto-loot.com/ref.php?go=aa489c6aafb514f720c145f199c25428]
+* **Step One**: Sign up for an account with [CryptoLOOT](https://crypto-loot.com/ref.php?go=aa489c6aafb514f720c145f199c25428)
 
 * **Step Two**: Install and activate the plugin, then enter your CryptoLOOT public key into the key field.
 * **Step Three**: Choose your options and start mining with CryptoLOOT.
