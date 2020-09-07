@@ -15,7 +15,7 @@ Text Domain: wp-cryptoloot
 @version 1.0
 */
 /**     
-This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
+The WP CryptoLOOT plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 Copyright (C) 2020 Scott Webber
 
 This program is free software; you can redistribute it and/or modify
