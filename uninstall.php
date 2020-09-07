@@ -2,7 +2,7 @@
 /* 
 @package wpcryptoloot
 @author Scott Webber
-@version 1.1
+@version 1.0
  */
  
 if (!defined('WP_UNINSTALL_PLUGIN')) {
