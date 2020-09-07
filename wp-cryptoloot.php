@@ -9,6 +9,11 @@ Author URI: https://github.com/scowebb/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
 */
+/**
+@package wpcryptoloot
+@author Scott Webber
+@version 1.1
+*/
 /**     
 This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 Copyright (C) 2020 Scott Webber
