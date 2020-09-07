@@ -5,8 +5,6 @@
 @version 1.1
 */
 
-// cd7a87f7781e3f163446db0d094b13cc6fbd27fe
-
 defined( 'ABSPATH' ) OR die;
 
 class wpcryptoloot_updater {
