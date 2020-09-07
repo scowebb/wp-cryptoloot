@@ -4,10 +4,15 @@ Plugin Name: WP CryptoLOOT
 Description: This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 Plugin URI: https://github.com/scowebb/wp-cryptoloot/
 Version: 1.1
-Author: @scowebb
+Author: Scott Webber
 Author URI: https://github.com/scowebb/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
+*/
+/**
+@package wpcryptoloot
+@author scowebb
+@version 1.1
 */
 /**     
 This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
