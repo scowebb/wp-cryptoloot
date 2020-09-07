@@ -41,7 +41,7 @@ register_deactivation_hook( __FILE__, 'wpcl_deactivate_plugin' );
 
 if( !function_exists( 'wpcl_deactivate_plugin' ) ) {
 	function wpcl_deactivate_plugin() {
-		// delete_option( 'wpcl_settings' );
+		delete_option( 'wpcl_settings' );
 		flush_rewrite_rules();
 	}
 }
