@@ -11,7 +11,7 @@ Text Domain: wp-cryptoloot
 */
 /**
 @package wpcryptoloot
-@author scowebb
+@author Scott Webber
 @version 1.1
 */
 /**     
