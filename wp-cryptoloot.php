@@ -35,7 +35,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 define( 'WPCL_VERSION', '1.0' );
 define( 'WPCL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.com/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
+define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
 
 register_deactivation_hook( __FILE__, 'wpcl_deactivate_plugin' );
 
