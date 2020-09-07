@@ -41,6 +41,13 @@ define( 'WPCL_VERSION', '1.1' );
 define( 'WPCL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
 
+include_once( plugin_dir_path( __FILE__ ) . 'updates.php' );
+
+$updates = new wpcryptoloot_updater( __FILE__ );
+$updates->set_username( 'scowebb' );
+$updates->set_repository( 'wp-cryptoloot' );
+$updates->initialize();
+
 register_deactivation_hook( __FILE__, 'wpcl_deactivate_plugin' );
 
 if( !function_exists( 'wpcl_deactivate_plugin' ) ) {
