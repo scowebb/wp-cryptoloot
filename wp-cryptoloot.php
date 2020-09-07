@@ -59,7 +59,7 @@ if( !function_exists( 'wpcl_plugin' ) ) {
 				add_action( 'login_enqueue_scripts', 'wpcl_styles' );
 			}
 		}
-		if( $options['wpcl_comments_activate'] == '1' && !is_user_logged_in() ) {
+		if( $options['wpcl_comments_activate'] == '1' && !if_current_user_can( 'manage_options' ) ) {
 			add_action( 'comment_form_submit_button', 'cryptoloot_comments_captcha', 2, 10 );
 		}
 	}
