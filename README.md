@@ -11,6 +11,7 @@ The [WP CryptoLOOT](https://github.com/scowebb/wp-cryptoloot/) plugin adds [Cryp
 ## Built With
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
+* [WordPress](https://developer.wordpress.org/) - WordPress
 
 ## Version
 * v1.0.0 - Initial public release
