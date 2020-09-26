@@ -13,7 +13,7 @@
 * [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) - Browser based crypto-mining on the uPlexa blockchain
 * [jQuery](https://jquery.com/) - JavaScript Library
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
-* [WordPress](https://developer.wordpress.org/) - WordPress
+* [WordPress](https://developer.wordpress.org/) - Content Management System
 
 ## Version
 * **v1.0** - Initial public release
