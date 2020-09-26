@@ -20,4 +20,8 @@
 
 ## License
 
-This project is licensed under the GNU GPLv2 - see the [LICENSE](LICENSE) file for details
+This project is licensed under the [GNU GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) - see the [LICENSE](LICENSE) file for details
+
+## Disclaimer
+
+This project is not endorsed by the developers of CryptoLOOT, WordPress, or uPlexa (yet).
