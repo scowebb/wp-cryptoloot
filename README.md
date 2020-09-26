@@ -11,10 +11,12 @@ The [WP CryptoLOOT](https://github.com/scowebb/wp-cryptoloot/) plugin adds [Cryp
 ## Built With
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
+* [jQuery](https://jquery.com/) - JavaScript Library
+* [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) - Browser based web miner for the uPlexa Blockchain
 * [WordPress](https://developer.wordpress.org/) - WordPress
 
 ## Version
-* v1.0.0 - Initial public release
+* **v1.0.0** - Initial public release
 
 ## Authors
 
