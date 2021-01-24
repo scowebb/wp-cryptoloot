@@ -1,11 +1,11 @@
 <?php
-/**
+/* 
 @package wpcryptoloot
 @author Scott Webber
-@version 1.0
-*/
+@version 1.1
+ */
  
-if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+if (!defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
 

@@ -1,21 +1,22 @@
 <?php
-/*
+/**
 Plugin Name: WP CryptoLOOT
 Description: This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
 Plugin URI: https://github.com/scowebb/wp-cryptoloot/
-Version: 1.0
+Version: 1.1
 Author: Scott Webber
 Author URI: https://github.com/scowebb/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
 */
 /**
- * @package wpcryptoloot
- * @author Scott Webber
- * @version 1.0
- */
-/*
+@package wpcryptoloot
+@author Scott Webber
+@version 1.1
+*/
+/**     
 The WP CryptoLOOT plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
+
 Copyright (C) 2020 Scott Webber
 
 This program is free software; you can redistribute it and/or modify
@@ -61,17 +62,32 @@ if( !function_exists( 'wpcl_plugin' ) ) {
 	add_action( 'init', 'wpcl_plugin' );
 	function wpcl_plugin() {
 		$options = get_option( 'wpcl_settings' );
-		if( $options['wpcl_login_activate'] == '1') {
+		if( isset( $options['wpcl_login_activate'] ) ) { 
+			$login_activate = $options['wpcl_login_activate']; 
+		} else { 
+			$login_activate = '0'; 
+		}
+		if( $login_activate == '1') {
 			add_action( 'login_form', 'cryptoloot_login_captcha_payload' );
 			add_action( 'login_enqueue_scripts', 'wpcl_styles' );
 		}
-		if( $options['wpcl_register_activate'] == '1' ) {
+		if( isset( $options['wpcl_register_activate'] ) ) {
+			$register_activate = $options['wpcl_register_activate'];
+		} else {
+			$register_activate = '0';
+		}
+		if( $register_activate == '1' ) {
 			add_action( 'register_form', 'cryptoloot_register_captcha_payload' );
-			if( $options['wpcl_login_activate'] == false ) {
+			if( $login_activate == '0' ) {
 				add_action( 'login_enqueue_scripts', 'wpcl_styles' );
 			}
 		}
-		if( $options['wpcl_comments_activate'] == '1' && !current_user_can( 'manage_options' ) ) {
+		if( isset( $options['wpcl_comments_activate'] ) ) {
+			$comments_activate = $options['wpcl_comments_activate'];
+		} else {
+			$comments_activate = '0';
+		}
+		if( $comments_activate == '1' && !current_user_can( 'manage_options' ) ) {
 			add_action( 'comment_form_submit_button', 'cryptoloot_comments_captcha', 2, 10 );
 		}
 	}
@@ -260,8 +276,12 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 			'wpcl_admin_page',
 			'wpcl_settings_page_section'
 		);
-		
-		if( $options['wpcl_auto_miner'] == true ) {
+		if( isset( $options['wpcl_auto_miner'] ) ){ 
+			$auto_miner = $options['wpcl_auto_miner']; 
+		} else { 
+			$auto_miner = false; 
+		}
+		if( $auto_miner == true ) {
 			add_settings_field(
 				'wpcl_threads',
 				__( '', 'wordpress' ),
@@ -291,8 +311,13 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 			'wpcl_login_form_activate_render', 
 			'wpcl_admin_page',
 			'wpcl_settings_page_section'
-		);		
-		if( $options['wpcl_login_activate'] ) {
+		);
+		if( isset( $options['wpcl_login_activate'] ) ) {
+			$login_activate = $options['wpcl_login_activate'];
+			} else {
+				$login_activate = false;
+			}
+		if( $login_activate == true ) {
 			add_settings_field(
 				'wpcl_login_captcha_hashes',
 				__( '', 'wordpress' ),
@@ -309,8 +334,12 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 			'wpcl_admin_page',
 			'wpcl_settings_page_section'
 		);
-		
-		if( $options['wpcl_register_activate'] == true ) {
+		if( isset( $options['wpcl_register_activate'] ) ) { 
+			$register_activate = $options['wpcl_register_activate']; 
+		} else {
+			$register_activate = false; 
+		}
+		if( $register_activate == true ) {
 			add_settings_field(
 				'wpcl_register_captcha_hashes',
 				__( '', 'wordpress' ),
@@ -326,8 +355,12 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 			'wpcl_admin_page',
 			'wpcl_settings_page_section'
 		);
-		
-		if( $options['wpcl_comments_activate'] == true ) {
+		if( isset( $options['wpcl_comments_activate'] ) ) {
+			$comments_activate = $options['wpcl_comments_activate'];
+		} else {
+			$comments_activate = false;
+		}
+		if( $comments_activate == true ) {
 			add_settings_field(
 				'wpcl_comments_captcha_hashes',
 				__( '', 'wordpress'),
