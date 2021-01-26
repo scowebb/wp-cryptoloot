@@ -16,8 +16,9 @@
 * [WordPress](https://developer.wordpress.org/) - Content Management System
 
 ## Version
-* **v1.0** - Initial public release
+
 * **v1.1** - Fixed undefined index errors 
+* **v1.0** - Initial public release
 
 ## License
 
