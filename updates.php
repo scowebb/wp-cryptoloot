@@ -2,7 +2,7 @@
 /**
 @package wpcryptoloot
 @class wpcryptoloot_updater
-@version 1.1
+@since 1.0
 */
 
 defined( 'ABSPATH' ) OR die;
