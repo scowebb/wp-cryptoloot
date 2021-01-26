@@ -33,4 +33,4 @@ This project is licensed under the [GNU GPLv2](https://www.gnu.org/licenses/old-
 
 ## Disclaimer
 
-This project is not endorsed by the developers of CryptoLOOT, WordPress, or uPlexa (yet).
+This project is not yet endorsed by the developers of CryptoLOOT, WordPress, or uPlexa.
