@@ -17,8 +17,9 @@
 
 ## Version
 
-* **v1.1** - Fixed undefined index errors (on Jan 24, 2021)
-* **v1.0** - Initial public release (on Sep 7, 2020)
+* **V1.2.** - Pre-release, updates and testing for next major release
+* **v1.1.** - Fixed undefined index errors (on Jan 24, 2021)
+* **v1.0.** - Initial public release (on Sep 7, 2020)
 
 ## License
 
