@@ -4,13 +4,13 @@
 
 ## Demos
 
-* [WordPress Login](https://wpcryptoloot.com/login)
-* [WordPress Registration](https://wpcryptoloot.com/login?action=register)
-* [WordPress Comments](https://wpcryptoloot.com/wp-cryptoloot-examples/)
+* [WordPress login](https://wpcryptoloot.com/login)
+* [WordPress registration](https://wpcryptoloot.com/login?action=register)
+* [WordPress comments](https://wpcryptoloot.com/wp-cryptoloot-demo/)
 
 ## Getting Started
 
-* **Step One**: Sign up for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
+* **Step One**: [Sign-up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
 * **Step Two**: Install and activate the plugin on a WordPress website, then enter your public key into the key field
 * **Step Three**: Choose your options and start mining
 
