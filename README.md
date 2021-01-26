@@ -23,9 +23,9 @@
 
 ## Version
 
-* **v1.2** - [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2), Pre-release, updates and testing for next major release
-* **v1.1** - [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1), Fixed undefined index errors (on Jan 24, 2021)
-* **v1.0** - [v1.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.0), Initial public release (on Sep 7, 2020)
+* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Pre-release, updates and testing for next major release
+* [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1) - Fixed undefined index errors (on Jan 24, 2021)
+* [v1.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.0) - Initial public release (on Sep 7, 2020)
 
 ## License
 
