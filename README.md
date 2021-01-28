@@ -4,9 +4,9 @@
 
 ## Demos
 
-* [WordPress login](https://wpcryptoloot.com/login)
-* [WordPress registration](https://wpcryptoloot.com/login?action=register)
-* [WordPress comments](https://wpcryptoloot.com/wp-cryptoloot-demo/)
+* [Login](https://wpcryptoloot.com/login)
+* [Registration](https://wpcryptoloot.com/login?action=register)
+* [Comments](https://wpcryptoloot.com/wp-cryptoloot-demo/)
 
 ## Getting Started
 
