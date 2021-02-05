@@ -26,9 +26,9 @@ class wpcryptoloot_updater {
 	}
 	
 	public function initialize() {
-		  add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'modify_transient' ), 10, 1 );
-		  add_filter( 'plugins_api', array( $this, 'plugin_popup' ), 10, 3);
-		  add_filter( 'upgrader_post_install', array( $this, 'after_install' ), 10, 3 );
+		add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'modify_transient' ), 10, 1 );
+		add_filter( 'plugins_api', array( $this, 'plugin_popup' ), 10, 3);
+		add_filter( 'upgrader_post_install', array( $this, 'after_install' ), 10, 3 );
 	}
 	
 	public function set_plugin_properties() {

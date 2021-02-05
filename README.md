@@ -4,9 +4,9 @@
 
 ## Demos
 
-* [Login](https://wpcryptoloot.com/login)
-* [Registration](https://wpcryptoloot.com/login/?action=register)
-* [Comments](https://wpcryptoloot.com/demos/#comments)
+* [WordPress login](https://wpcryptoloot.com/login)
+* [WordPress registration](https://wpcryptoloot.com/login?action=register)
+* [WordPress comments](https://wpcryptoloot.com/demos/)
 
 ## Getting Started
 
@@ -23,7 +23,7 @@
 
 ## Version
 
-* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Pre-release, updates and testing for next major release
+* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Pre-release, adds admin notices, adds front-end miner GUI, increses thread count to max out at 100 (on Feb 4, 2021)
 * [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1) - Fixed undefined index errors (on Jan 24, 2021)
 * [v1.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.0) - Initial public release (on Sep 7, 2020)
 
@@ -33,4 +33,4 @@ This project is licensed under the [GNU GPLv2](https://www.gnu.org/licenses/old-
 
 ## Disclaimer
 
-This project is not yet endorsed by the developers of CryptoLOOT, WordPress, or uPlexa.
+This project has not been endorsed by the developers of CryptoLOOT, WordPress, or uPlexa.
