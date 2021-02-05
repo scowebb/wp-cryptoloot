@@ -1,10 +1,16 @@
 # WP CryptoLOOT
 
-[WP CryptoLOOT](https://wpcryptoloot.com/) is a free plugin that can seamlessly connect your [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) account to a [WordPress](https://wordpress.org/) installation, enabling options for both captcha form protections and browser based crypto-mining capabilities on the [uPlexa](https://uplexa.com/) blockchain. Here’s [an example](https://wpcryptoloot.com/wp-login.php?action=register) of how the plugin deters spam registrations.
+[WP CryptoLOOT](https://wpcryptoloot.com/) is a free plugin that can seamlessly connect your [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) account to a [WordPress](https://wordpress.org/) installation, enabling options for both captcha form protections and browser based crypto-mining capabilities on the [uPlexa](https://uplexa.com/) blockchain.
+
+## Demos
+
+* [WordPress login](https://wpcryptoloot.com/login)
+* [WordPress registration](https://wpcryptoloot.com/login?action=register)
+* [WordPress comments](https://wpcryptoloot.com/demos/)
 
 ## Getting Started
 
-* **Step One**: Sign up for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
+* **Step One**: [Sign-up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
 * **Step Two**: Install and activate the plugin on a WordPress website, then enter your public key into the key field
 * **Step Three**: Choose your options and start mining
 
@@ -17,8 +23,9 @@
 
 ## Version
 
-* **v1.1** - Fixed undefined index errors (on Jan 24, 2021)
-* **v1.0** - Initial public release (on Sep 7, 2020)
+* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Pre-release, adds admin notices, adds front-end miner GUI, increses thread count to max out at 100 (on Feb 4, 2021)
+* [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1) - Fixed undefined index errors (on Jan 24, 2021)
+* [v1.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.0) - Initial public release (on Sep 7, 2020)
 
 ## License
 
@@ -26,4 +33,4 @@ This project is licensed under the [GNU GPLv2](https://www.gnu.org/licenses/old-
 
 ## Disclaimer
 
-This project is not endorsed by the developers of CryptoLOOT, WordPress, or uPlexa (yet).
+This project has not been endorsed by the developers of CryptoLOOT, WordPress, or uPlexa.
