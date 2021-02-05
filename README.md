@@ -23,7 +23,7 @@
 
 ## Version
 
-* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Add admin notices, add miner GUI for WP front end, increase max thread count to 100 (on Feb 4, 2021)
+* [v1.2](https://github.com/scowebb/wp-cryptoloot/tree/1.2) - Add admin notices, increase max thread count to 100 (on Feb 5, 2021)
 * [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1) - Fixed undefined index errors (on Jan 24, 2021)
 * [v1.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.0) - Initial public release (on Sep 7, 2020)
 
