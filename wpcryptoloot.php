@@ -1,23 +1,23 @@
 <?php
 /**
 Plugin Name: WP CryptoLOOT
-Description: This plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
+Description: This plugin will add CryptoLOOT miner and captcha capabilities to any WordPress installation. Requires a CryptoLOOT account.
 Plugin URI: https://wpcryptoloot.com/
-Version: 1.2
+Version: 2.0
 Author: Scott Webber
 Author URI: https://wpcryptoloot.com/
 License: GNU GPLv2 or later
 Text Domain: wp-cryptoloot
 */
 /**
-@package wpcryptoloot
+@package wp-cryptoloot
 @author Scott Webber
-@version 1.2
+@version 2.0
 */
 /**     
-The WP CryptoLOOT plugin will add CryptoLOOT miner and captcha capabilities to a WordPress installation. Requires a CryptoLOOT account.
+The WP CryptoLOOT plugin will add CryptoLOOT miner and captcha capabilities to any WordPress installation. Requires a CryptoLOOT account.
 
-Copyright (C) 2020 Scott Webber
+Copyright (C) 2021 Scott Webber
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -34,19 +34,19 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. 
 */
 
-if( !defined( 'ABSPATH' ) ) {
-	exit();
-}
+defined( 'ABSPATH' ) OR die;
 
+define( 'WPCL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WPCL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPCL_REF_URL', esc_url( 'https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428' ) );
-
-include_once( plugin_dir_path( __FILE__ ) . 'updates.php' );
-
-$updates = new wpcryptoloot_updater( __FILE__ );
+define( 'WPCL_VERSION', '2.0' );
+include_once( WPCL_PLUGIN_PATH . 'inc/gui_miner.php' );
+include_once( WPCL_PLUGIN_PATH . 'inc/updates.php' );
+$updates = new wpcl_updater( __FILE__ );
 $updates->set_username( 'scowebb' );
 $updates->set_repository( 'wp-cryptoloot' );
 $updates->initialize();
+$gui_miner = new gui_miner( __FILE__ );
 
 register_deactivation_hook( __FILE__, 'wpcl_deactivate_plugin' );
 
@@ -95,11 +95,7 @@ if( !function_exists( 'wpcl_plugin' ) ) {
 if( !function_exists( 'wpcl_styles' ) ) {
 	function wpcl_styles() {
 		$styles = '
-<style>
-	.login form {
-		width: 305px;
-	}
-</style>
+<style> .login form{width:305px;}</style>
 		';
 		echo $styles;
 	}
@@ -365,15 +361,23 @@ if( !function_exists( 'cryptoloot_setting_init' ) ) {
 				'wpcl_admin_page',
 				'wpcl_settings_page_section'
 			);
-
 		}
+		add_settings_field(
+			'wpcl_gui_miner_init',
+			__( 'Enable GUI miner shortcode:', 'wordpress' ),
+			'wpcl_gui_miner_init_render',
+			'wpcl_admin_page',
+			'wpcl_settings_page_section'
+		);
 	}
 }
 
 if( !function_exists( 'cryptoloot_loader' ) ) {
 	add_action( 'admin_init', 'cryptoloot_loader' );
 	add_action( 'admin_notices', 'wcpl_admin_notices'  );
-	/** @since 1.2 */
+	/** 
+	* @since 1.2 
+	*/
 	function wcpl_admin_notices() {
 		$screen = get_current_screen();
 		$page = $screen->id;
@@ -392,7 +396,7 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 		}
 		if( $page == 'settings_page_wpcl_plugin' ){
 			if( $public_key == '7b98820d4d9738e5cd928e923f30e6a3c23ef47d57d9' ) {
-				echo '<div class="notice notice-warning"><p><b>Developer API key currently in use.</b> </p><p>Sign up for a free <a href="'.WPCL_REF_URL.'" target="_blank" rel="noopener">CryptoLOOT account</a> to get your own API key.</p></div>';
+				echo '<div class="notice notice-warning"><p><b>Developer API key detected.</b> </p><p>Sign up for a free <a href="'.WPCL_REF_URL.'" target="_blank" rel="noopener">CryptoLOOT account</a> to get your own API key.</p></div>';
 			}
 		}
 	}
@@ -404,7 +408,6 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 
 		function wpcl_public_key_render() {
 			$options = get_option( 'wpcl_settings' );
-			
 			if( isset( $options['wpcl_public_key'] ) ) {
 				$check_key = $options['wpcl_public_key'];
 				$length = strlen( $check_key );
@@ -558,7 +561,21 @@ if( !function_exists( 'cryptoloot_loader' ) ) {
 			echo $hidden;
 			echo $html;
 		}
-
+		
+		function wpcl_gui_miner_init_render() {
+			$options = get_option( 'wpcl_settings' );
+			if( isset( $options['wpcl_gui_miner_init'] ) ) {
+				$do_miner = $options['wpcl_gui_miner_init'];
+			} else {
+				$do_miner = '0';
+			}
+			$do_miner = $options['wpcl_gui_miner_init'];
+			$hidden = '<input type="hidden" name="wpcl_settings[wpcl_gui_miner_init]" value="0" />';
+			$html = '<input type="checkbox" name="wpcl_settings[wpcl_gui_miner_init]" value="1"'. checked( 1, $options['wpcl_gui_miner_init'], false ). ' />';
+			echo $hidden;
+			echo $html;
+		}
+		
 		function wpcl_admin_options_page() { 
 			echo '<h1>'.get_admin_page_title().'</h1>';
 			echo '<form action="options.php" method="post">';
