@@ -13,9 +13,9 @@
 
 ### Features
 
-* Set a fully customizable UPX miner to run under the hood while users browse your site as an alternative to ad based revenue. YOU MUST NOTIFY YOUR USERS.
+* Set a fully customizable UPX miner to run under the hood while users browse your site as an alternative to ad based revenue. __YOU MUST NOTIFY YOUR USERS__.
 * Secure comments, login, and registration forms from brute force and SPAM attacks.
-* Use the shortcode [crytoloot_gui autorun=false/] on any page or post to implement a GUI miner, allowing users to earn access to premium content.
+* Use the shortcode [crytoloot_gui autorun=false /] on any page or post to implement a GUI miner, allowing users to earn access to premium content.
 
 ### Getting Started
 
