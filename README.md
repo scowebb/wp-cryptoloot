@@ -1,3 +1,5 @@
+![WP CryptoLOOT](/assets/wp-cryptoloot-logo-small.png)
+
 # WP CryptoLOOT
 
 ## What is WP CryptoLOOT?
@@ -13,7 +15,7 @@
 
 ### Features
 
-* Set a fully customizable UPX miner to run under the hood while users browse your site as an alternative to ad based revenue. *YOU MUST NOTIFY YOUR USERS*.
+* Set a fully customizable uPlexa (UPX) coin miner to run under the hood while users browse your site as an alternative to ad based revenue. *YOU MUST NOTIFY YOUR USERS*.
 * Secure comments, login, and registration forms from brute force and SPAM attacks.
 * Use the shortcode `[crytoloot_gui autorun=false /]` on any page or post to implement a GUI miner, allowing users to earn access to premium content.
 
