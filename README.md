@@ -1,5 +1,7 @@
 # WP CryptoLOOT
 
+![WP CryptoLOOT](/assets/wp-cryptoloot-logo.png)
+
 ## What is WP CryptoLOOT?
 
 [WP CryptoLOOT](https://wpcryptoloot.com/) is a free, lightweight plugin that will seamlessly connect [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) to any [WordPress](https://wordpress.org/) installation, enabling options for captcha form protections and browser based crypto mining on the [uPlexa](https://uplexa.com/) blockchain.
