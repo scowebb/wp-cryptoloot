@@ -1,6 +1,4 @@
-![WP CryptoLOOT](/assets/wp-cryptoloot-logo-small.png)
-
-# WP CryptoLOOT
+![WP CryptoLOOT](/assets/wp-cryptoloot-logo-small.png) # WP CryptoLOOT
 
 ## What is WP CryptoLOOT?
 
