@@ -8,10 +8,10 @@
 
 ### Demos
 
+* [GUI Miner](https://wpcryptoloot.com/)
 * [Login](https://wpcryptoloot.com/login)
 * [Registration](https://wpcryptoloot.com/login?action=register)
-* [Comments](https://wpcryptoloot.com/demos/)
-* [GUI Miner](https://wpcryptoloot.com/demos/)
+* [Comments](https://wpcryptoloot.com/demos/#comments)
 
 ### Features
 
