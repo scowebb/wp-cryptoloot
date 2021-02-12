@@ -10,7 +10,7 @@
 
 * [GUI Miner](https://wpcryptoloot.com/)
 * [Login](https://wpcryptoloot.com/login)
-* [Registration](https://wpcryptoloot.com/login?action=register)
+* [Registration](https://wpcryptoloot.com/login/?action=register)
 * [Comments](https://wpcryptoloot.com/demos/#comments)
 
 ### Features
