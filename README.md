@@ -21,7 +21,7 @@
 
 ### Getting Started
 
-* **Step One**: [Sign-up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
+* **Step One**: [Sign up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
 * **Step Two**: Install and activate the plugin on a WordPress website, then enter your public CryptoLOOT api key into the key field
 * **Step Three**: Choose your options and start mining UPX coin today!
 
