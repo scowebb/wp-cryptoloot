@@ -17,7 +17,7 @@
 
 * Set a fully customizable uPlexa (UPX) coin miner to run under the hood while users browse your site as an alternative to ad based revenue. *YOU MUST NOTIFY YOUR USERS*.
 * Secure comments, login, and registration forms from brute force and SPAM attacks.
-* Use the shortcode `[crytoloot_gui autorun=false /]` on any page or post to implement a GUI miner, allowing users to earn access to premium content.
+* Use the shortcode `[crytoloot_gui]` on any page or post to implement a GUI miner, allowing users to earn access to features such as premium content. Add the option `autorun=true` to start the miner on page load (see example [here](https://wpcryptoloot.com/))
 
 ### Getting Started
 
