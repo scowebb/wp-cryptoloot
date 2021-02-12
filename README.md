@@ -8,27 +8,26 @@
 
 ### Demos
 
+* [GUI Miner](https://wpcryptoloot.com/)
 * [Login](https://wpcryptoloot.com/login)
-* [Registration](https://wpcryptoloot.com/login?action=register)
-* [Comments](https://wpcryptoloot.com/demos/)
-* [GUI Miner](https://wpcryptoloot.com/demos/)
+* [Registration](https://wpcryptoloot.com/login/?action=register)
+* [Comments](https://wpcryptoloot.com/demos/#comments)
 
 ### Features
 
-* Set a fully customizable uPlexa (UPX) coin miner to run under the hood while users browse your site as an alternative to ad based revenue. *YOU MUST NOTIFY YOUR USERS*.
+* Set a fully customizable uPlexa (UPX) coin miner to run under the hood while users browse your site as an alternative to ad based revenue. If you choose to use this option then *YOU MUST NOTIFY YOUR USERS*.
 * Secure comments, login, and registration forms from brute force and SPAM attacks.
-* Use the shortcode `[crytoloot_gui autorun=false /]` on any page or post to implement a GUI miner, allowing users to earn access to premium content.
+* Use the shortcode `[crytoloot_gui]` on any page or post to implement a GUI miner, allowing users to earn access to features such as premium content. Add the option `autorun=true` to start the miner on page load (see example [here](https://wpcryptoloot.com/))
 
 ### Getting Started
 
-* **Step One**: [Sign-up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
+* **Step One**: [Sign up](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) for an account with [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428)
 * **Step Two**: Install and activate the plugin on a WordPress website, then enter your public CryptoLOOT api key into the key field
 * **Step Three**: Choose your options and start mining UPX coin today!
 
 ### Built With
 
 * [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) - Browser based crypto-mining on the uPlexa blockchain
-* [jQuery](https://jquery.com/) - JavaScript Library
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
 * [WordPress](https://developer.wordpress.org/) - Content Management System
 
