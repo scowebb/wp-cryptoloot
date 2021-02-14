@@ -32,7 +32,7 @@
 
 ### Version
 
-* [v2.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/2.1) - Bug fixes, code clean up
+* [v2.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/2.1) - Bug fixes, code clean up (on Feb 12, 2021)
 * [v2.0](https://github.com/scowebb/wp-cryptoloot/releases/tag/2.0) - Added front-end GUI miner shortcode with an auto-start option (on Feb 8, 2021)
 * [v1.2](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.2) - Added admin notices, increased max thread count to 100 (on Feb 5, 2021)
 * [v1.1](https://github.com/scowebb/wp-cryptoloot/releases/tag/1.1) - Fixed undefined index errors (on Jan 24, 2021)
