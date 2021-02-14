@@ -6,18 +6,17 @@
 
 [WP CryptoLOOT](https://wpcryptoloot.com/) is a free, lightweight plugin that will seamlessly connect [CryptoLOOT](https://crypto-loot.org/ref.php?go=aa489c6aafb514f720c145f199c25428) to any [WordPress](https://wordpress.org/) installation, enabling options for captcha form protections and browser based crypto mining on the [uPlexa](https://uplexa.com/) blockchain.
 
+### Features
+
+* Set a fully customizable uPlexa (UPX) coin miner to run under the hood while visitors browse your site as an alternative to ad based revenue. If you choose to use this option then *YOU MUST NOTIFY YOUR USERS*.
+* Secure comments, login, and registration forms from brute force and SPAM attacks.
+* Use the shortcode `[cryptoloot_gui]` on any page or post to implement a GUI miner, allowing users to earn access to features such as premium content. Add the option `autorun=true` to start the miner on page load (see example [here](https://wpcryptoloot.com/)), and specify starting threads with `threads=2`.
 ### Demos
 
 * [GUI Miner](https://wpcryptoloot.com/)
 * [Login](https://wpcryptoloot.com/login)
 * [Registration](https://wpcryptoloot.com/login/?action=register)
 * [Comments](https://wpcryptoloot.com/demos/#comments)
-
-### Features
-
-* Set a fully customizable uPlexa (UPX) coin miner to run under the hood while users browse your site as an alternative to ad based revenue. If you choose to use this option then *YOU MUST NOTIFY YOUR USERS*.
-* Secure comments, login, and registration forms from brute force and SPAM attacks.
-* Use the shortcode `[cryptoloot_gui]` on any page or post to implement a GUI miner, allowing users to earn access to features such as premium content. Add the option `autorun=true` to start the miner on page load (see example [here](https://wpcryptoloot.com/)), and specify starting threads with `threads=2`.
 
 ### Getting Started
 
